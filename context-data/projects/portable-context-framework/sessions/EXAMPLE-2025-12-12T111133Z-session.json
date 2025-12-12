@@ -1,0 +1,29 @@
+{
+  "id": "example-session-2025-12-12",
+  "timestamp": "2025-12-12T11:11:33.166Z",
+  "project": "portable-context-framework",
+  "session": {
+    "title": "Building and Installing Wundr Context MCP Server - Phase 1",
+    "type": "feature",
+    "status": "completed"
+  },
+  "artifacts": {
+    "commits": [
+      "b1c52ab",
+      "9cfbfd7"
+    ],
+    "chats": [
+      "https://claude.ai/chat/[this-conversation-id]"
+    ]
+  },
+  "summary": "Built a complete MCP server for capturing and querying development context. Implemented three tools: add_context (captures sessions with commits, chat URLs, tags), query_context (searches by keywords/tags), and get_timeline (chronological view). Created automatic installation script that detects OS, validates Node.js, builds the server, and configures Claude Desktop. Added comprehensive documentation with troubleshooting guides. Key decision: Keep storage simple with file-based JSON (no database) for Phase 1 MVP. All tests pass.",
+  "tags": [
+    "mcp",
+    "setup",
+    "phase-1",
+    "typescript",
+    "automation",
+    "documentation"
+  ],
+  "relatedSessions": []
+}
