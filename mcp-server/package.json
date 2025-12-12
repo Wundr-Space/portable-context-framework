@@ -1,0 +1,25 @@
+{
+  "name": "wundr-context-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for capturing and querying development context",
+  "type": "module",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "node build/test.js"
+  },
+  "keywords": ["mcp", "context", "development"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

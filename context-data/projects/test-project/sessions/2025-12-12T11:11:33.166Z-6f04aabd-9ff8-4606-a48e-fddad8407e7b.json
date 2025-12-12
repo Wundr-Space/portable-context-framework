@@ -1,0 +1,25 @@
+{
+  "id": "6f04aabd-9ff8-4606-a48e-fddad8407e7b",
+  "timestamp": "2025-12-12T11:11:33.166Z",
+  "project": "test-project",
+  "session": {
+    "title": "Test OAuth implementation",
+    "type": "feature",
+    "status": "completed"
+  },
+  "artifacts": {
+    "commits": [
+      "abc123",
+      "def456"
+    ],
+    "chats": [
+      "https://claude.ai/chat/test123"
+    ]
+  },
+  "summary": "Implemented OAuth2 authentication flow with refresh tokens. Added secure cookie handling and token rotation for enhanced security.",
+  "tags": [
+    "authentication",
+    "security",
+    "test"
+  ]
+}
