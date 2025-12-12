@@ -102,6 +102,16 @@ export function Roadmap() {
                       {phase.intro}
                     </p>
                   )}
+                  {phase.status === 'current' && (
+                    <div className="mt-4">
+                      <a
+                        href="/dev-edition"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors text-sm"
+                      >
+                        Explore Developer Edition (MVP) →
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
 

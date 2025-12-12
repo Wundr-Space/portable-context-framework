@@ -38,6 +38,16 @@ export function Hero() {
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
+
+            <div className="pt-6 text-center sm:text-left">
+              <a
+                href="/dev-edition"
+                className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+              >
+                <span>Explore Developer Edition (MVP for AI coding teams)</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
           {/* Right: Visual */}
