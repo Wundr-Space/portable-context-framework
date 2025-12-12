@@ -1,0 +1,7 @@
+# Ignore large files but keep structure
+*.log
+*.tmp
+
+# Keep directory structure
+!.gitkeep
+!projects/
