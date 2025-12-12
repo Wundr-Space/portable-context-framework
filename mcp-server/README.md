@@ -20,25 +20,60 @@ Query past sessions by:
 
 ## Installation
 
-### 1. Install Dependencies
+### Prerequisites
+
+- **Node.js 18+**: Install from [nodejs.org](https://nodejs.org/)
+- **Claude Desktop**: Download from [claude.ai/download](https://claude.ai/download)
+
+### Automatic Installation (Recommended)
+
+Run the installation script from the `mcp-server` directory:
+
+```bash
+cd mcp-server
+./install.sh
+```
+
+The script will:
+- ✓ Check Node.js version
+- ✓ Build the MCP server
+- ✓ Detect Claude Desktop config location
+- ✓ Backup existing config
+- ✓ Add wundr-context to your MCP servers
+- ✓ Provide next steps
+
+**Then restart Claude Desktop** (quit and reopen).
+
+### Manual Installation
+
+If the automatic installer doesn't work:
+
+#### 1. Build the server
 
 ```bash
 cd mcp-server
 npm install
-```
-
-### 2. Build
-
-```bash
 npm run build
 ```
 
-### 3. Configure Claude Desktop
-
-Add to your Claude Desktop config file:
+#### 2. Find your Claude Desktop config
 
 **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+**Linux**: `~/.config/Claude/claude_desktop_config.json`
+
+Create the directory if it doesn't exist:
+```bash
+# macOS
+mkdir -p "$HOME/Library/Application Support/Claude"
+
+# Linux
+mkdir -p ~/.config/Claude
+```
+
+#### 3. Add to config file
+
+Edit `claude_desktop_config.json` and add (replace path with your actual path):
 
 ```json
 {
@@ -51,9 +86,13 @@ Add to your Claude Desktop config file:
 }
 ```
 
-Replace `/absolute/path/to/` with your actual path.
+**Get the absolute path:**
+```bash
+cd mcp-server
+echo "$(pwd)/build/index.js"
+```
 
-### 4. Restart Claude Desktop
+#### 4. Restart Claude Desktop
 
 Quit and restart Claude Desktop to load the MCP server.
 
@@ -210,18 +249,56 @@ The server communicates over stdio (standard input/output). It's designed to be 
 
 ## Troubleshooting
 
+### Claude Desktop config directory doesn't exist
+
+If you don't have a Claude folder in Application Support:
+
+1. **Make sure Claude Desktop is installed**
+   - Download from [claude.ai/download](https://claude.ai/download)
+   - Launch it at least once to create the config directory
+
+2. **Create the directory manually**:
+   ```bash
+   # macOS
+   mkdir -p "$HOME/Library/Application Support/Claude"
+
+   # Linux
+   mkdir -p ~/.config/Claude
+
+   # Windows (PowerShell)
+   New-Item -ItemType Directory -Force -Path "$env:APPDATA\Claude"
+   ```
+
+3. **Run the installer** - it will create the config file:
+   ```bash
+   cd mcp-server
+   ./install.sh
+   ```
+
 ### Server not showing up in Claude
 
 1. Check Claude Desktop config path is correct
-2. Verify the absolute path to `build/index.js`
-3. Restart Claude Desktop completely
-4. Check Claude Desktop logs for errors
+2. Verify the absolute path to `build/index.js` in the config
+3. Restart Claude Desktop completely (quit and reopen)
+4. Check Claude Desktop logs for errors:
+   - macOS: `~/Library/Logs/Claude/`
+   - Windows: `%APPDATA%\Claude\logs\`
 
 ### Tools not working
 
 1. Ensure `npm run build` completed successfully
 2. Check that `build/` directory exists with compiled JS files
-3. Verify Node.js version >= 18
+3. Verify Node.js version >= 18:
+   ```bash
+   node -v  # should show v18.0.0 or higher
+   ```
+
+### Installation script fails
+
+If `./install.sh` doesn't work:
+1. Make sure it's executable: `chmod +x install.sh`
+2. Use manual installation method (see Manual Installation section)
+3. Check that Python 3 is installed (needed for JSON merging)
 
 ## Next Steps
 
