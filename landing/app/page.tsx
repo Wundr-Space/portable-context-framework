@@ -1,6 +1,7 @@
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Problem } from './components/Problem';
+import { Mediate } from './components/Mediate';
 import { Solution } from './components/Solution';
 import { HowItWorks } from './components/HowItWorks';
 import { UniversalAccess } from './components/UniversalAccess';
@@ -18,6 +19,7 @@ export default function Home() {
       <main>
         <Hero />
         <Problem />
+        <Mediate />
         <Solution />
         <HowItWorks />
         <UniversalAccess />

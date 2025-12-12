@@ -9,7 +9,7 @@ export function Waitlist() {
             Get Early Access
           </h2>
           <p className="text-xl text-neutral-600">
-            Be among the first to experience AI coding with perfect memory.
+            Be among the first to build at AI speed with collective intelligence intact.
           </p>
         </div>
 

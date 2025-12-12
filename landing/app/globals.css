@@ -23,6 +23,25 @@
   }
 }
 
+@layer components {
+  /* Enhanced blockquote styling for story sections */
+  .problem-story {
+    position: relative;
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+
+  .problem-story::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--tw-gradient-from), var(--tw-gradient-to));
+  }
+}
+
 @layer utilities {
   /* Fade-in animation for scroll effects */
   @keyframes fade-in {

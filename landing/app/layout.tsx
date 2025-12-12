@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portable Context Framework | Context as Code",
-  description: "Universal, portable context for AI coding agents. Store context in GitHub, access from any tool. Works with Claude Code, Codex, Cursor, and more.",
-  keywords: ["AI coding", "context management", "GitHub", "MCP", "Claude Code", "Codex", "Cursor"],
+  title: "Portable Context Framework | Collective Intelligence for AI-Accelerated Teams",
+  description: "Build at AI speed. Think at human depth. PCF preserves collective intelligence as decisions emerge, enforcing the 'mediate' step in AI-accelerated development.",
+  keywords: ["AI coding", "collective intelligence", "context management", "team collaboration", "GitHub", "MCP", "Claude Code", "Codex", "Cursor", "AI development"],
   authors: [{ name: "Wundr Space", url: "https://wundr.space" }],
   openGraph: {
-    title: "Portable Context Framework",
-    description: "Context as Code - Universal, portable, yours",
+    title: "Portable Context Framework | Collective Intelligence for AI-Accelerated Teams",
+    description: "Build at AI speed. Think at human depth. PCF preserves collective intelligence as decisions emerge.",
     url: "https://context.wundr.space",
     siteName: "Portable Context Framework",
     type: "website",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Portable Context Framework",
-    description: "Context as Code - Universal, portable, yours",
+    description: "Build at AI speed. Think at human depth. Preserve collective intelligence.",
   },
 };
 
