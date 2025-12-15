@@ -3,9 +3,10 @@ import { Check, ArrowRight, Circle } from 'lucide-react';
 export function Roadmap() {
   const phases = [
     {
-      phase: "Phase 1: Local MCP Server",
+      phase: "Phase 1: Development",
       status: "current",
       period: "Week 1 (December 2025)",
+      intro: "WE ARE HERE — Teams building with Claude, Cursor, Windsurf lose decisions between sessions. Engineers six months later ask \"why did we build it this way?\" and get no answer.",
       items: [
         { text: "MCP server built", completed: true },
         { text: "Core tools: add_context, query_context, timeline", completed: true },
@@ -61,8 +62,11 @@ export function Roadmap() {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900">
-            The Path Forward
+            Starting With Developers. Building for Collective Intelligence Everywhere.
           </h2>
+          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            Anywhere teams make complex decisions at speed, context matters. We're starting where the pain is most acute—AI-assisted software development. But the pattern extends far beyond code.
+          </p>
         </div>
 
         <div className="space-y-8 max-w-4xl mx-auto">
@@ -79,7 +83,7 @@ export function Roadmap() {
             >
               {/* Header */}
               <div className="flex items-start justify-between">
-                <div>
+                <div className="w-full">
                   <div className="flex items-center gap-3 mb-2">
                     <h3 className="text-2xl font-bold text-neutral-900">
                       {phase.phase}
@@ -93,6 +97,21 @@ export function Roadmap() {
                   <p className="text-sm text-neutral-600 font-medium">
                     {phase.period}
                   </p>
+                  {phase.intro && (
+                    <p className="mt-4 text-base text-neutral-700 leading-relaxed">
+                      {phase.intro}
+                    </p>
+                  )}
+                  {phase.status === 'current' && (
+                    <div className="mt-4">
+                      <a
+                        href="/dev-edition"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors text-sm"
+                      >
+                        Explore Developer Edition (MVP) →
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
 

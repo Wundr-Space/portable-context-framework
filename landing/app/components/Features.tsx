@@ -1,7 +1,22 @@
-import { Globe, Users, Package, GitBranch, Unlock, Rocket } from 'lucide-react';
+import { Globe, Users, Package, GitBranch, Unlock, Rocket, Brain, Pause, FileText } from 'lucide-react';
 
 export function Features() {
   const features = [
+    {
+      icon: Brain,
+      title: "Collective Intelligence Preserved",
+      description: "Capture knowledge as it emerges from team discussions, not just individual implementations. Technical and non-technical voices matter equally."
+    },
+    {
+      icon: Pause,
+      title: "Reflection Before Action",
+      description: "No code without context. The \"mediate\" step ensures teams think before they build, even at AI speed."
+    },
+    {
+      icon: FileText,
+      title: "Decisions, Not Just Outcomes",
+      description: "Preserve the WHY and the HOW, not just the WHAT. Future teams need to understand your reasoning, not just your results."
+    },
     {
       icon: Globe,
       title: "Universal Access",

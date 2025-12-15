@@ -1,26 +1,20 @@
-import { RefreshCw, Search, BookOpen, Users } from 'lucide-react';
-
 export function Problem() {
-  const painPoints = [
+  const lossExamples = [
     {
-      icon: RefreshCw,
-      title: "Starting Over, Every Time",
-      description: "Claude Code, Codex, Cursor — every agent, every session starts blind. \"What did we decide about authentication?\" → You explain. Again."
+      title: "Collective Intelligence Lost",
+      description: "When 5 people discuss a solution, valuable knowledge emerges from the conversation. AI coding lets you execute immediately—but only one person's understanding makes it to the code."
     },
     {
-      icon: Search,
-      title: "Lost Decisions",
-      description: "\"Why Firebase over Supabase?\" Buried in a chat from three weeks ago. Or was it a PR comment? Maybe Slack? Nobody remembers."
+      title: "Decisions Without Rationale",
+      description: "\"Why Firebase over Supabase?\" The chat where you debated cost constraints, discussed trade-offs, and reached consensus—gone. Only the implementation remains."
     },
     {
-      icon: BookOpen,
-      title: "Scattered Knowledge",
-      description: "Architecture in Miro. Decisions in GitHub PRs. Discussions in AI chats. Code in repos. Nothing connects. Context lives nowhere."
+      title: "Non-Technical Context Vanishes",
+      description: "Business goals, user needs, privacy considerations, cost constraints—the non-technical context that informed technical decisions disappears the moment you start coding."
     },
     {
-      icon: Users,
-      title: "Teams Without Context",
-      description: "New teammate clones the repo. Gets code. Misses everything else. Six months of decisions, discussions, and \"why we built it this way\" — gone."
+      title: "Teams Without Memory",
+      description: "New teammates get the code. They miss six months of \"why we built it this way.\" They rebuild solutions. They repeat mistakes. Institutional knowledge dies with velocity."
     }
   ];
 
@@ -31,42 +25,48 @@ export function Problem() {
           <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900">
             The Cost of Context Fragmentation
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-            Every AI coding session starts fresh. Every decision gets lost. Every teammate starts blind.
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-12">
-          {painPoints.map((point, index) => {
-            const Icon = point.icon;
-            return (
+        {/* Story */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <blockquote className="problem-story border-l-4 border-primary pl-8 py-6 text-lg text-neutral-700 leading-relaxed space-y-4 bg-neutral-50 rounded-r-lg pr-8">
+            <p>
+              "We spent an hour in a room—product, design, engineering. We debated trade-offs, considered constraints, reached consensus. Then our engineer opened Claude Code and built it. In 20 minutes.
+            </p>
+            <p className="font-semibold text-neutral-900 text-xl">
+              A month later, new team member asks: 'Why did we build it this way?'
+            </p>
+            <p>
+              Nobody remembers. The discussion is gone. Only the code remains.
+            </p>
+            <p className="italic">
+              AI makes us fast. But fast without memory is just... fast."
+            </p>
+          </blockquote>
+        </div>
+
+        {/* Real Cost */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <h3 className="text-2xl lg:text-3xl font-bold text-neutral-900 text-center mb-12">
+            The Real Cost Isn't Speed—It's Lost Intelligence
+          </h3>
+
+          <div className="space-y-8">
+            {lossExamples.map((example, index) => (
               <div
                 key={index}
-                className="bg-neutral-50 border border-neutral-200 rounded-xl p-8 hover:border-primary/50 transition-colors"
+                className="bg-neutral-50 border border-neutral-200 rounded-xl p-8 hover:border-primary/30 transition-colors"
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-semibold text-neutral-900">
-                      {point.title}
-                    </h3>
-                    <p className="text-neutral-600 leading-relaxed">
-                      {point.description}
-                    </p>
-                  </div>
-                </div>
+                <h4 className="text-xl font-bold text-neutral-900 mb-3">
+                  {example.title}
+                </h4>
+                <p className="text-neutral-600 leading-relaxed text-lg">
+                  {example.description}
+                </p>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
-
-        <p className="text-center text-xl font-medium text-neutral-700 italic">
-          It's not just inefficient. It's unsustainable.
-        </p>
       </div>
     </section>
   );

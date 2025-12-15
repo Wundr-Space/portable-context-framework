@@ -9,25 +9,14 @@ export function Hero() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight">
-                Context as Code
+                Build at AI Speed.<br />Think at Human Depth.
               </h1>
-              <p className="text-2xl lg:text-3xl text-neutral-700 font-medium">
-                Universal. Portable. Yours.
+              <p className="text-xl lg:text-2xl text-neutral-600 leading-relaxed">
+                AI can turn team discussions into production code in hours.<br />
+                But speed without collective memory is recklessness.
               </p>
-            </div>
-
-            <div className="space-y-4 text-lg text-neutral-600">
-              <p>
-                Your codebase tells the story of <strong>WHAT</strong> changed.
-                <br />
-                Your context tells the story of <strong>WHY</strong>.
-              </p>
-              <p>
-                Every AI coding agent can read it.
-                <br />
-                Every teammate who clones your repo gets the full story.
-                <br />
-                Every decision, discussion, and diagram — versioned in GitHub.
+              <p className="text-xl lg:text-2xl text-neutral-900 font-semibold leading-relaxed">
+                PCF captures the WHY, the HOW, and the WHO — as decisions emerge.
               </p>
             </div>
 
@@ -46,6 +35,16 @@ export function Hero() {
               >
                 <Github className="w-5 h-5" />
                 View on GitHub
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="pt-6 text-center sm:text-left">
+              <a
+                href="/dev-edition"
+                className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+              >
+                <span>Explore Developer Edition (MVP for AI coding teams)</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
