@@ -146,6 +146,8 @@ Claude: Timeline for orphai (12 sessions):
 Generate a feature/user-story backlog and companion wiki markdown from captured sessions. The tool writes artifacts to
 `context-data/projects/<project>/backlog/` for import into Azure DevOps.
 
+See the step-by-step walkthrough in [BACKLOG_GUIDE.md](./BACKLOG_GUIDE.md) to seed sample data and verify outputs locally.
+
 ```json
 {
   "project": "orphai",
