@@ -2,6 +2,8 @@
  * Storage operations for context sessions
  */
 import type { ContextSession } from './types.js';
+export declare const ROOT_DIR: string;
+export declare const CONTEXT_DATA_DIR: string;
 /**
  * Save a session to disk
  */

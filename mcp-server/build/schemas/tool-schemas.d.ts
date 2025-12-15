@@ -105,4 +105,38 @@ export declare const GET_TIMELINE_SCHEMA: {
         required: string[];
     };
 };
+export declare const GENERATE_BACKLOG_SCHEMA: {
+    name: string;
+    description: string;
+    inputSchema: {
+        type: string;
+        properties: {
+            project: {
+                type: string;
+                description: string;
+            };
+            azure_organization: {
+                type: string;
+                description: string;
+            };
+            azure_project: {
+                type: string;
+                description: string;
+            };
+            repository_url: {
+                type: string;
+                description: string;
+            };
+            since: {
+                type: string;
+                description: string;
+            };
+            limit: {
+                type: string;
+                description: string;
+            };
+        };
+        required: string[];
+    };
+};
 //# sourceMappingURL=tool-schemas.d.ts.map
