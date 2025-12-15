@@ -9,6 +9,7 @@ Captures development sessions with:
 - Git commit hashes
 - Chat URLs (Claude.ai links)
 - GitHub PR links
+- Azure DevOps-ready backlog exports (features, user stories, wiki content)
 - Searchable tags
 - Project organization
 
@@ -17,6 +18,7 @@ Query past sessions by:
 - Keywords (searches title, summary, tags)
 - Tags (with AND logic)
 - Timeline view
+- Backlog synthesis for Azure DevOps (generate features, stories, tasks, wiki)
 
 ## Installation
 
@@ -139,6 +141,22 @@ Claude: Timeline for orphai (12 sessions):
   - 16:00 API error handling (bugfix)
 ```
 
+### Build Azure DevOps Backlog and Wiki Content
+
+Generate a feature/user-story backlog and companion wiki markdown from captured sessions. The tool writes artifacts to
+`context-data/projects/<project>/backlog/` for import into Azure DevOps.
+
+```json
+{
+  "project": "orphai",
+  "azure_organization": "https://dev.azure.com/acme",
+  "azure_project": "orphai-platform",
+  "repository_url": "https://dev.azure.com/acme/orphai/_git/app",
+  "since": "14 days",
+  "limit": 15
+}
+```
+
 ## MCP Tools
 
 ### add_context
@@ -208,6 +226,32 @@ Get chronological timeline for a project.
   "project": "orphai",
   "since": "7 days",
   "limit": 10
+}
+```
+
+### generate_backlog
+
+Generate Azure DevOps-ready backlog artifacts (features, user stories, tasks) plus wiki markdown derived from captured sessions.
+
+**Required Parameters:**
+- `project` - Project name
+
+**Optional Parameters:**
+- `azure_organization` - Azure DevOps organization URL (metadata only)
+- `azure_project` - Azure DevOps project name (defaults to project)
+- `repository_url` - Repository URL for traceability guidance
+- `since` - ISO date or relative string to filter sessions (e.g., "14 days")
+- `limit` - Max sessions to include (default: 20)
+
+**Example:**
+```json
+{
+  "project": "orphai",
+  "azure_organization": "https://dev.azure.com/acme",
+  "azure_project": "orphai-platform",
+  "repository_url": "https://dev.azure.com/acme/orphai/_git/app",
+  "since": "14 days",
+  "limit": 15
 }
 ```
 

@@ -17,12 +17,14 @@ import {
 import { addContext } from "./tools/add-context.js";
 import { queryContext } from "./tools/query-context.js";
 import { getTimeline } from "./tools/get-timeline.js";
+import { generateBacklog } from "./tools/generate-backlog.js";
 import {
   ADD_CONTEXT_SCHEMA,
   QUERY_CONTEXT_SCHEMA,
-  GET_TIMELINE_SCHEMA
+  GET_TIMELINE_SCHEMA,
+  GENERATE_BACKLOG_SCHEMA
 } from "./schemas/tool-schemas.js";
-import type { AddContextInput, QueryContextInput, GetTimelineInput } from "./lib/types.js";
+import type { AddContextInput, QueryContextInput, GetTimelineInput, BacklogGenerationInput } from "./lib/types.js";
 
 // Create server
 const server = new Server(
@@ -43,7 +45,8 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
     tools: [
       ADD_CONTEXT_SCHEMA,
       QUERY_CONTEXT_SCHEMA,
-      GET_TIMELINE_SCHEMA
+      GET_TIMELINE_SCHEMA,
+      GENERATE_BACKLOG_SCHEMA
     ]
   };
 });
@@ -83,6 +86,19 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       case "get_timeline": {
         const input = args as unknown as GetTimelineInput;
         const result = await getTimeline(input);
+        return {
+          content: [
+            {
+              type: "text",
+              text: result
+            }
+          ]
+        };
+      }
+
+      case "generate_backlog": {
+        const input = args as unknown as BacklogGenerationInput;
+        const result = await generateBacklog(input);
         return {
           content: [
             {

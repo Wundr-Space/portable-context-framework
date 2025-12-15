@@ -75,4 +75,43 @@ export interface GetTimelineResult {
     showing: number;
     timeline: TimelineDay[];
 }
+export interface BacklogTask {
+    title: string;
+    description: string;
+    doneDefinition: string[];
+    relatedCommits: string[];
+}
+export interface BacklogUserStory {
+    title: string;
+    description: string;
+    acceptanceCriteria: string[];
+    tasks: BacklogTask[];
+    wikiSection: string;
+}
+export interface BacklogFeature {
+    title: string;
+    description: string;
+    tags: string[];
+    sessionId: string;
+    commits: string[];
+    userStories: BacklogUserStory[];
+}
+export interface BacklogPlan {
+    project: string;
+    azureOrganization?: string;
+    azureProject?: string;
+    repositoryUrl?: string;
+    generatedAt: string;
+    features: BacklogFeature[];
+    wikiPath: string;
+    backlogPath: string;
+}
+export interface BacklogGenerationInput {
+    project: string;
+    azure_organization?: string;
+    azure_project?: string;
+    repository_url?: string;
+    since?: string;
+    limit?: number;
+}
 //# sourceMappingURL=types.d.ts.map

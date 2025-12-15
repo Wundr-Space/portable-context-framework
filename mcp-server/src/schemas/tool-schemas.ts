@@ -102,3 +102,38 @@ export const GET_TIMELINE_SCHEMA = {
     required: ["project"]
   }
 };
+
+export const GENERATE_BACKLOG_SCHEMA = {
+  name: "generate_backlog",
+  description: "Convert captured sessions into Azure DevOps-ready backlog items and wiki content",
+  inputSchema: {
+    type: "object",
+    properties: {
+      project: {
+        type: "string",
+        description: "Project name to build backlog for"
+      },
+      azure_organization: {
+        type: "string",
+        description: "Azure DevOps organization URL (optional, for metadata)"
+      },
+      azure_project: {
+        type: "string",
+        description: "Azure DevOps project name (defaults to project)"
+      },
+      repository_url: {
+        type: "string",
+        description: "Repository URL for linking commits in generated guidance"
+      },
+      since: {
+        type: "string",
+        description: "Filter sessions captured since this date or relative window (e.g., '14 days')"
+      },
+      limit: {
+        type: "number",
+        description: "Maximum number of sessions to include (default 20)"
+      }
+    },
+    required: ["project"]
+  }
+};

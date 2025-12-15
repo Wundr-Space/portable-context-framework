@@ -8,8 +8,8 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 // Get the root directory (two levels up from build/lib)
-const ROOT_DIR = path.resolve(__dirname, '../../..');
-const CONTEXT_DATA_DIR = path.join(ROOT_DIR, 'context-data');
+export const ROOT_DIR = path.resolve(__dirname, '../../..');
+export const CONTEXT_DATA_DIR = path.join(ROOT_DIR, 'context-data');
 /**
  * Save a session to disk
  */
